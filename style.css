@@ -1,0 +1,2155 @@
+/* =========================================================
+   CHHATH PUJA MUSIC WEBSITE
+   COMPLETE STYLE.CSS
+========================================================= */
+
+
+/* =========================================================
+   1. BASIC RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================================
+   2. BODY / MAIN BACKGROUND
+========================================================= */
+
+body {
+
+    width: 100%;
+    height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+
+    background-image:
+        url("./assets/backbone.png");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   3. DARK OVERLAY
+   Background ko thoda cinematic banata hai
+========================================================= */
+
+.overlay {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.18),
+            rgba(0, 0, 0, 0.38)
+        );
+
+    z-index: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   4. LIVE BACKGROUND CONTAINER
+========================================================= */
+
+.live-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+}
+
+
+/* =========================================================
+   5. WATER LIGHT / RIVER MOVEMENT
+========================================================= */
+
+.live-background::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 0;
+
+    height: 38%;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.06) 0px,
+            rgba(255, 255, 255, 0.025) 3px,
+            transparent 8px
+        );
+
+    opacity: 0.45;
+
+    animation:
+        waterMove 5s ease-in-out infinite;
+
+    mix-blend-mode: screen;
+
+}
+
+
+@keyframes waterMove {
+
+    0% {
+
+        transform:
+            translateX(-25px)
+            skewX(-1deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateX(25px)
+            skewX(1deg);
+
+    }
+
+    100% {
+
+        transform:
+            translateX(-25px)
+            skewX(-1deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   6. AGARBATTI SMOKE
+========================================================= */
+
+.smoke {
+
+    position: absolute;
+
+    width: 70px;
+
+    height: 150px;
+
+    bottom: 17%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255, 255, 255, 0.24) 0%,
+            rgba(255, 255, 255, 0.12) 30%,
+            rgba(255, 255, 255, 0.05) 55%,
+            transparent 75%
+        );
+
+    filter: blur(13px);
+
+    opacity: 0;
+
+    transform-origin: bottom center;
+
+}
+
+
+/* Smoke 1 */
+
+.smoke-one {
+
+    left: 20%;
+
+    animation:
+        smokeUpOne
+        7s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* Smoke 2 */
+
+.smoke-two {
+
+    left: 22%;
+
+    width: 90px;
+
+    height: 175px;
+
+    animation:
+        smokeUpTwo
+        9s
+        ease-in-out
+        infinite;
+
+    animation-delay: 2s;
+
+}
+
+
+/* Smoke 3 */
+
+.smoke-three {
+
+    left: 19%;
+
+    width: 60px;
+
+    height: 130px;
+
+    animation:
+        smokeUpThree
+        8s
+        ease-in-out
+        infinite;
+
+    animation-delay: 4s;
+
+}
+
+
+/* =====================================================
+   REAL BLACK BIRDS
+===================================================== */
+
+.bird {
+
+    position: absolute;
+
+    width: 42px;
+    height: 25px;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    filter:
+        drop-shadow(
+            0 2px 3px
+            rgba(0, 0, 0, 0.45)
+        );
+
+}
+
+
+/* =====================================================
+   BIRD BODY
+===================================================== */
+
+.bird-body {
+
+    position: absolute;
+
+    width: 17px;
+    height: 8px;
+
+    left: 13px;
+    top: 9px;
+
+    background: #111;
+
+    border-radius: 50% 55% 45% 50%;
+
+}
+
+
+/* =====================================================
+   WINGS
+===================================================== */
+
+.wing {
+
+    position: absolute;
+
+    width: 22px;
+    height: 10px;
+
+    background: #111;
+
+    top: 5px;
+
+}
+
+
+/* LEFT WING */
+
+.left-wing {
+
+    left: 0;
+
+    border-radius:
+        100% 0 0 100%;
+
+    transform-origin:
+        right center;
+
+    transform:
+        rotate(-25deg)
+        skewX(-20deg);
+
+}
+
+
+/* RIGHT WING */
+
+.right-wing {
+
+    right: 0;
+
+    border-radius:
+        0 100% 100% 0;
+
+    transform-origin:
+        left center;
+
+    transform:
+        rotate(25deg)
+        skewX(20deg);
+
+}
+
+
+/* =====================================================
+   WING FLAPPING
+===================================================== */
+
+.bird .left-wing {
+
+    animation:
+        leftWingFlap
+        0.45s
+        ease-in-out
+        infinite alternate;
+
+}
+
+
+.bird .right-wing {
+
+    animation:
+        rightWingFlap
+        0.45s
+        ease-in-out
+        infinite alternate;
+
+}
+
+
+@keyframes leftWingFlap {
+
+    0% {
+
+        transform:
+            rotate(-25deg)
+            skewX(-20deg);
+
+    }
+
+    100% {
+
+        transform:
+            rotate(-65deg)
+            skewX(-10deg);
+
+    }
+
+}
+
+
+@keyframes rightWingFlap {
+
+    0% {
+
+        transform:
+            rotate(25deg)
+            skewX(20deg);
+
+    }
+
+    100% {
+
+        transform:
+            rotate(65deg)
+            skewX(10deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   BIRD 1
+   Left → Right
+===================================================== */
+
+.bird-1 {
+
+    top: 18%;
+    left: -70px;
+
+    transform: scale(1);
+
+    animation:
+        birdPathOne
+        22s
+        linear
+        infinite;
+
+}
+
+
+/* =====================================================
+   BIRD 2
+   Right → Left
+===================================================== */
+
+.bird-2 {
+
+    top: 30%;
+    right: -70px;
+
+    transform:
+        scaleX(-1)
+        scale(0.75);
+
+    animation:
+        birdPathTwo
+        27s
+        linear
+        infinite;
+
+    animation-delay: 6s;
+
+}
+
+
+/* =====================================================
+   BIRD 3
+===================================================== */
+
+.bird-3 {
+
+    top: 12%;
+    left: -70px;
+
+    transform: scale(0.55);
+
+    animation:
+        birdPathThree
+        31s
+        linear
+        infinite;
+
+    animation-delay: 11s;
+
+}
+
+
+/* =====================================================
+   BIRD 4
+===================================================== */
+
+.bird-4 {
+
+    top: 42%;
+    right: -70px;
+
+    transform:
+        scaleX(-1)
+        scale(0.65);
+
+    animation:
+        birdPathFour
+        25s
+        linear
+        infinite;
+
+    animation-delay: 15s;
+
+}
+
+
+/* =====================================================
+   BIRD PATH 1
+   Curved flight
+===================================================== */
+
+@keyframes birdPathOne {
+
+    0% {
+
+        left: -80px;
+
+        top: 20%;
+
+        opacity: 0;
+
+    }
+
+
+    8% {
+
+        opacity: 0.9;
+
+    }
+
+
+    20% {
+
+        left: 15%;
+
+        top: 15%;
+
+    }
+
+
+    35% {
+
+        left: 30%;
+
+        top: 24%;
+
+    }
+
+
+    50% {
+
+        left: 48%;
+
+        top: 13%;
+
+    }
+
+
+    65% {
+
+        left: 65%;
+
+        top: 20%;
+
+    }
+
+
+    80% {
+
+        left: 82%;
+
+        top: 10%;
+
+        opacity: 0.85;
+
+    }
+
+
+    94% {
+
+        opacity: 0.5;
+
+    }
+
+
+    100% {
+
+        left: 110%;
+
+        top: 25%;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =====================================================
+   BIRD PATH 2
+===================================================== */
+
+@keyframes birdPathTwo {
+
+    0% {
+
+        right: -80px;
+
+        top: 32%;
+
+        opacity: 0;
+
+    }
+
+
+    8% {
+
+        opacity: 0.85;
+
+    }
+
+
+    25% {
+
+        right: 20%;
+
+        top: 22%;
+
+    }
+
+
+    40% {
+
+        right: 38%;
+
+        top: 35%;
+
+    }
+
+
+    55% {
+
+        right: 55%;
+
+        top: 18%;
+
+    }
+
+
+    70% {
+
+        right: 72%;
+
+        top: 28%;
+
+    }
+
+
+    88% {
+
+        right: 92%;
+
+        top: 16%;
+
+        opacity: 0.7;
+
+    }
+
+
+    100% {
+
+        right: 110%;
+
+        top: 30%;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =====================================================
+   BIRD PATH 3
+===================================================== */
+
+@keyframes birdPathThree {
+
+    0% {
+
+        left: -80px;
+
+        top: 12%;
+
+        opacity: 0;
+
+    }
+
+
+    10% {
+
+        opacity: 0.65;
+
+    }
+
+
+    25% {
+
+        left: 20%;
+
+        top: 25%;
+
+    }
+
+
+    45% {
+
+        left: 40%;
+
+        top: 8%;
+
+    }
+
+
+    60% {
+
+        left: 60%;
+
+        top: 22%;
+
+    }
+
+
+    78% {
+
+        left: 80%;
+
+        top: 12%;
+
+    }
+
+
+    100% {
+
+        left: 110%;
+
+        top: 20%;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =====================================================
+   BIRD PATH 4
+===================================================== */
+
+@keyframes birdPathFour {
+
+    0% {
+
+        right: -80px;
+
+        top: 45%;
+
+        opacity: 0;
+
+    }
+
+
+    10% {
+
+        opacity: 0.7;
+
+    }
+
+
+    25% {
+
+        right: 18%;
+
+        top: 35%;
+
+    }
+
+
+    45% {
+
+        right: 40%;
+
+        top: 48%;
+
+    }
+
+
+    60% {
+
+        right: 60%;
+
+        top: 32%;
+
+    }
+
+
+    78% {
+
+        right: 80%;
+
+        top: 43%;
+
+    }
+
+
+    100% {
+
+        right: 110%;
+
+        top: 30%;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+
+
+/* =========================================================
+   SMOKE ANIMATION 1
+========================================================= */
+
+@keyframes smokeUpOne {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(0, 20px)
+            scale(0.45)
+            rotate(-5deg);
+
+    }
+
+
+    15% {
+
+        opacity: 0.55;
+
+    }
+
+
+    35% {
+
+        transform:
+            translate(25px, -60px)
+            scale(0.85)
+            rotate(8deg);
+
+    }
+
+
+    55% {
+
+        transform:
+            translate(-15px, -125px)
+            scale(1.15)
+            rotate(-8deg);
+
+    }
+
+
+    75% {
+
+        opacity: 0.28;
+
+    }
+
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(35px, -250px)
+            scale(1.6)
+            rotate(15deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   SMOKE ANIMATION 2
+========================================================= */
+
+@keyframes smokeUpTwo {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(0, 30px)
+            scale(0.4);
+
+    }
+
+
+    20% {
+
+        opacity: 0.45;
+
+    }
+
+
+    40% {
+
+        transform:
+            translate(-30px, -70px)
+            scale(0.9);
+
+    }
+
+
+    65% {
+
+        transform:
+            translate(40px, -145px)
+            scale(1.3);
+
+    }
+
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(-25px, -270px)
+            scale(1.7);
+
+    }
+
+}
+
+
+/* =========================================================
+   SMOKE ANIMATION 3
+========================================================= */
+
+@keyframes smokeUpThree {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(0, 20px)
+            scale(0.5);
+
+    }
+
+
+    25% {
+
+        opacity: 0.42;
+
+    }
+
+
+    50% {
+
+        transform:
+            translate(45px, -100px)
+            scale(1.15);
+
+    }
+
+
+    75% {
+
+        opacity: 0.20;
+
+    }
+
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(-30px, -240px)
+            scale(1.6);
+
+    }
+
+}
+
+
+/* =========================================================
+   7. DIYA
+========================================================= */
+
+.diya {
+
+    position: absolute;
+
+    left: 20%;
+
+    bottom: 13%;
+
+    width: 65px;
+
+    height: 55px;
+
+}
+
+
+/* Diya Body */
+
+.diya-body {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 5px;
+
+    width: 55px;
+
+    height: 25px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #d8752b,
+            #8b3c13
+        );
+
+    border-radius:
+        10px 10px 35px 35px;
+
+    box-shadow:
+        0 0 15px
+        rgba(255, 130, 30, 0.55);
+
+}
+
+
+/* Diya top */
+
+.diya-body::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 7px;
+
+    top: -4px;
+
+    width: 41px;
+
+    height: 8px;
+
+    background:
+        #8f4318;
+
+    border-radius: 50%;
+
+}
+
+
+/* =========================================================
+   8. DIYA FLAME
+========================================================= */
+
+.flame {
+
+    position: absolute;
+
+    left: 25px;
+
+    bottom: 21px;
+
+    width: 18px;
+
+    height: 31px;
+
+    background:
+        radial-gradient(
+            circle at 50% 70%,
+            #fffbd0 0%,
+            #fff176 25%,
+            #ffc400 45%,
+            #ff7200 70%,
+            transparent 72%
+        );
+
+    border-radius:
+        50% 50% 45% 45%;
+
+    transform-origin:
+        bottom center;
+
+    filter:
+        drop-shadow(
+            0 0 8px #ffae00
+        );
+
+    animation:
+        flameMove
+        0.65s
+        ease-in-out
+        infinite alternate;
+
+}
+
+
+@keyframes flameMove {
+
+    0% {
+
+        transform:
+            rotate(-7deg)
+            scaleY(0.9)
+            scaleX(0.95);
+
+    }
+
+
+    50% {
+
+        transform:
+            rotate(6deg)
+            scaleY(1.12)
+            scaleX(1.05);
+
+    }
+
+
+    100% {
+
+        transform:
+            rotate(-4deg)
+            scaleY(0.96)
+            scaleX(0.98);
+
+    }
+
+}
+
+
+/* =========================================================
+   9. FLOATING FLOWERS
+========================================================= */
+
+.flower {
+
+    position: absolute;
+
+    font-size: 25px;
+
+    opacity: 0;
+
+    filter:
+        drop-shadow(
+            0 2px 6px
+            rgba(0, 0, 0, 0.45)
+        );
+
+}
+
+
+/* Flower 1 */
+
+.flower-one {
+
+    left: 8%;
+
+    top: 85%;
+
+    animation:
+        flowerMove
+        12s
+        linear
+        infinite;
+
+}
+
+
+/* Flower 2 */
+
+.flower-two {
+
+    left: 30%;
+
+    top: 95%;
+
+    animation:
+        flowerMove
+        15s
+        linear
+        infinite;
+
+    animation-delay: 3s;
+
+}
+
+
+/* Flower 3 */
+
+.flower-three {
+
+    left: 55%;
+
+    top: 90%;
+
+    animation:
+        flowerMove
+        13s
+        linear
+        infinite;
+
+    animation-delay: 6s;
+
+}
+
+
+/* Flower 4 */
+
+.flower-four {
+
+    left: 75%;
+
+    top: 93%;
+
+    animation:
+        flowerMove
+        16s
+        linear
+        infinite;
+
+    animation-delay: 2s;
+
+}
+
+
+/* Flower 5 */
+
+.flower-five {
+
+    left: 90%;
+
+    top: 80%;
+
+    animation:
+        flowerMove
+        14s
+        linear
+        infinite;
+
+    animation-delay: 5s;
+
+}
+
+
+/* =========================================================
+   FLOWER ANIMATION
+========================================================= */
+
+@keyframes flowerMove {
+
+    0% {
+
+        transform:
+            translateY(50px)
+            translateX(0)
+            rotate(0deg)
+            scale(0.7);
+
+        opacity: 0;
+
+    }
+
+
+    15% {
+
+        opacity: 0.8;
+
+    }
+
+
+    35% {
+
+        transform:
+            translateY(-150px)
+            translateX(40px)
+            rotate(100deg)
+            scale(1);
+
+    }
+
+
+    55% {
+
+        transform:
+            translateY(-300px)
+            translateX(-35px)
+            rotate(200deg)
+            scale(0.9);
+
+    }
+
+
+    80% {
+
+        opacity: 0.45;
+
+    }
+
+
+    100% {
+
+        transform:
+            translateY(-600px)
+            translateX(60px)
+            rotate(360deg)
+            scale(0.6);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   10. GLOWING PARTICLES
+========================================================= */
+
+.particle {
+
+    position: absolute;
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background:
+        #ffd978;
+
+    box-shadow:
+        0 0 12px
+        rgba(255, 210, 100, 0.95);
+
+    opacity: 0;
+
+    animation:
+        particleFloat
+        8s
+        linear
+        infinite;
+
+}
+
+
+/* Particle positions */
+
+.particle-one {
+
+    left: 15%;
+
+    bottom: 20%;
+
+}
+
+
+.particle-two {
+
+    left: 40%;
+
+    bottom: 30%;
+
+    animation-delay: 2s;
+
+}
+
+
+.particle-three {
+
+    left: 60%;
+
+    bottom: 15%;
+
+    animation-delay: 4s;
+
+}
+
+
+.particle-four {
+
+    left: 78%;
+
+    bottom: 25%;
+
+    animation-delay: 1s;
+
+}
+
+
+.particle-five {
+
+    left: 90%;
+
+    bottom: 35%;
+
+    animation-delay: 5s;
+
+}
+
+
+/* =========================================================
+   PARTICLE ANIMATION
+========================================================= */
+
+@keyframes particleFloat {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(0.4);
+
+        opacity: 0;
+
+    }
+
+
+    20% {
+
+        opacity: 0.9;
+
+    }
+
+
+    50% {
+
+        transform:
+            translateY(-150px)
+            scale(1);
+
+        opacity: 0.7;
+
+    }
+
+
+    100% {
+
+        transform:
+            translateY(-350px)
+            scale(0.2);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   11. TOP BAR
+========================================================= */
+
+.top-bar {
+
+    position: absolute;
+
+    top: 25px;
+
+    left: 35px;
+
+    right: 35px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    z-index: 10;
+
+}
+
+
+.left-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 15px;
+
+    text-shadow:
+        0 2px 6px
+        rgba(0,0,0,0.5);
+
+}
+
+
+.divider {
+
+    opacity: 0.6;
+
+}
+
+
+.online-dot {
+
+    width: 9px;
+
+    height: 9px;
+
+    display: inline-block;
+
+    background:
+        #35d477;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px
+        #35d477;
+
+}
+
+
+/* =========================================================
+   12. SUPPORT BUTTON
+========================================================= */
+
+.support-btn {
+
+    border:
+        1px solid
+        rgba(255,255,255,0.35);
+
+    background:
+        rgba(255,255,255,0.13);
+
+    color: white;
+
+    padding:
+        10px 19px;
+
+    border-radius: 28px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    backdrop-filter:
+        blur(12px);
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,0.12);
+
+}
+
+
+.support-btn:hover {
+
+    background:
+        rgba(255,255,255,0.25);
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* =========================================================
+   13. MAIN SECTION
+========================================================= */
+
+.main-section {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+}
+
+
+/* =========================================================
+   14. WEBSITE TITLE
+========================================================= */
+
+.website-title {
+
+    position: absolute;
+
+    top: 36%;
+
+    text-align: center;
+
+    text-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.8);
+
+}
+
+
+.website-title h1 {
+
+    font-size: 68px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+.website-title p {
+
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    letter-spacing: 8px;
+
+    opacity: 0.8;
+
+}
+
+
+/* =========================================================
+   15. MUSIC PLAYER
+========================================================= */
+
+.music-player {
+
+    position: absolute;
+
+    bottom: 78px;
+
+    width: 720px;
+
+    min-height: 110px;
+
+    padding:
+        12px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    border-radius: 60px;
+
+    background:
+        rgba(20,20,20,0.46);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.28);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 12px 45px
+        rgba(0,0,0,0.35);
+
+}
+
+
+/* =========================================================
+   16. SONG COVER
+========================================================= */
+
+.cover-box {
+
+    flex-shrink: 0;
+
+}
+
+
+.cover-box img {
+
+    width: 72px;
+
+    height: 72px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,0.35);
+
+}
+
+
+/* =========================================================
+   17. SONG DETAILS
+========================================================= */
+
+.song-details {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.song-details h3 {
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    text-shadow:
+        0 2px 5px
+        rgba(0,0,0,0.5);
+
+}
+
+
+.song-details p {
+
+    margin-top: 5px;
+
+    font-size: 13px;
+
+    opacity: 0.68;
+
+}
+
+
+/* =========================================================
+   18. PROGRESS BAR
+========================================================= */
+
+.progress-area {
+
+    margin-top: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 11px;
+
+    opacity: 0.85;
+
+}
+
+
+#progressBar {
+
+    flex: 1;
+
+    height: 4px;
+
+    cursor: pointer;
+
+    accent-color: white;
+
+}
+
+
+/* =========================================================
+   19. MUSIC CONTROLS
+========================================================= */
+
+.controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+
+}
+
+
+.control-btn,
+.play-btn {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.22);
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+/* Previous / Next */
+
+.control-btn {
+
+    width: 42px;
+
+    height: 42px;
+
+    color: white;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    font-size: 15px;
+
+}
+
+
+/* Play */
+
+.play-btn {
+
+    width: 54px;
+
+    height: 54px;
+
+    color: #222;
+
+    background:
+        rgba(255,255,255,0.90);
+
+    font-size: 19px;
+
+}
+
+
+.control-btn:hover {
+
+    background:
+        rgba(255,255,255,0.28);
+
+    transform:
+        scale(1.05);
+
+}
+
+
+.play-btn:hover {
+
+    background: white;
+
+    transform:
+        scale(1.06);
+
+}
+
+
+/* =========================================================
+   20. FOOTER
+========================================================= */
+
+footer {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    width: 100%;
+
+    text-align: center;
+
+    z-index: 10;
+
+    font-size: 13px;
+
+    color:
+        rgba(255,255,255,0.70);
+
+    text-shadow:
+        0 2px 6px
+        rgba(0,0,0,0.5);
+
+}
+
+
+footer span {
+
+    color:
+        #ff5470;
+
+}
+
+
+/* =========================================================
+   21. MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+
+    /* Top */
+
+    .top-bar {
+
+        top: 17px;
+
+        left: 15px;
+
+        right: 15px;
+
+    }
+
+
+    .left-info {
+
+        font-size: 12px;
+
+        gap: 6px;
+
+    }
+
+
+    .support-btn {
+
+        padding:
+            8px 12px;
+
+        font-size: 12px;
+
+    }
+
+
+    /* Title */
+
+    .website-title {
+
+        top: 34%;
+
+    }
+
+
+    .website-title h1 {
+
+        font-size: 43px;
+
+    }
+
+
+    .website-title p {
+
+        font-size: 10px;
+
+        letter-spacing: 5px;
+
+    }
+
+
+    /* Player */
+
+    .music-player {
+
+        width: 94%;
+
+        min-height: 90px;
+
+        bottom: 55px;
+
+        padding:
+            10px 12px;
+
+        border-radius: 30px;
+
+        gap: 10px;
+
+    }
+
+
+    /* Cover */
+
+    .cover-box img {
+
+        width: 55px;
+
+        height: 55px;
+
+    }
+
+
+    /* Song */
+
+    .song-details h3 {
+
+        font-size: 14px;
+
+    }
+
+
+    .song-details p {
+
+        font-size: 11px;
+
+    }
+
+
+    /* Hide previous and next */
+
+    .control-btn {
+
+        display: none;
+
+    }
+
+
+    /* Play */
+
+    .play-btn {
+
+        width: 46px;
+
+        height: 46px;
+
+        font-size: 16px;
+
+    }
+
+
+    /* Footer */
+
+    footer {
+
+        font-size: 11px;
+
+        bottom: 18px;
+
+    }
+
+}
+
+
+/* =========================================================
+   22. VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+
+    .website-title h1 {
+
+        font-size: 36px;
+
+    }
+
+
+    .website-title p {
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .music-player {
+
+        width: 96%;
+
+    }
+
+
+    .cover-box img {
+
+        width: 48px;
+
+        height: 48px;
+
+    }
+
+
+    .play-btn {
+
+        width: 42px;
+
+        height: 42px;
+
+    }
+
+}

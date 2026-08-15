@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Chhath Puja Music</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         DARK OVERLAY
+    ====================================== -->
+
+    <div class="overlay"></div>
+
+
+
+    <!-- =====================================
+         ANIMATED CHHATH BACKGROUND
+    ====================================== -->
+
+    <div class="live-background">
+
+
+        <!-- AGARBATTI SMOKE -->
+
+        <div class="smoke smoke-one"></div>
+
+        <div class="smoke smoke-two"></div>
+
+        <div class="smoke smoke-three"></div>
+
+
+
+        <!-- DIYA -->
+
+        <div class="diya">
+
+            <div class="flame"></div>
+
+            <div class="diya-body"></div>
+
+        </div>
+
+
+
+        <!-- FLOATING FLOWERS -->
+
+        <div class="flower flower-one">🌸</div>
+
+        <div class="flower flower-two">🌼</div>
+
+        <div class="flower flower-three">🌸</div>
+
+        <div class="flower flower-four">🌼</div>
+
+        <div class="flower flower-five">🌸</div>
+
+
+
+<!-- =========================
+     REALISTIC BLACK FLYING BIRDS
+========================= -->
+
+       <div class="bird bird-1">
+
+        <span class="wing left-wing"></span>
+       
+        <span class="wing right-wing"></span>
+    
+        <span class="bird-body"></span>
+    
+    </div>
+
+   <div class="bird bird-2">
+  
+    <span class="wing left-wing"></span>
+   
+    <span class="wing right-wing"></span>
+    
+    <span class="bird-body"></span>
+    </div>
+
+
+    <div class="bird bird-3">
+   
+        <span class="wing left-wing"></span>
+   
+        <span class="wing right-wing"></span>
+  
+        <span class="bird-body"></span>
+
+    </div>
+
+    <div class="bird bird-4">
+   
+        <span class="wing left-wing"></span>
+   
+        <span class="wing right-wing"></span>
+    
+        <span class="bird-body"></span>
+
+    </div>
+
+        <!-- GLOWING PARTICLES -->
+
+        <div class="particle particle-one"></div>
+
+        <div class="particle particle-two"></div>
+
+        <div class="particle particle-three"></div>
+
+        <div class="particle particle-four"></div>
+
+        <div class="particle particle-five"></div>
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         TOP BAR
+    ====================================== -->
+
+    <header class="top-bar">
+
+
+        <!-- LEFT INFORMATION -->
+
+        <div class="left-info">
+
+
+            <!-- LIVE CLOCK -->
+
+            <span id="clock">
+                9:24 AM
+            </span>
+
+
+            <span class="divider">
+                |
+            </span>
+
+
+            <!-- ONLINE DOT -->
+
+            <span class="online-dot"></span>
+
+
+            <!-- LISTENERS -->
+
+            <span>
+
+                <b id="listeners">
+                    245
+                </b>
+
+                listening
+
+            </span>
+
+
+        </div>
+
+
+
+        <!-- SUPPORT BUTTON -->
+
+        <button class="support-btn">
+
+            ☕ Support
+
+        </button>
+
+
+    </header>
+
+
+
+    <!-- =====================================
+         MAIN SECTION
+    ====================================== -->
+
+    <main class="main-section">
+
+
+        <!-- =================================
+             WEBSITE TITLE
+        ================================== -->
+
+        <div class="website-title">
+
+
+            <h1>
+                छठ पूजा
+            </h1>
+
+
+            <p>
+                C H H A T H &nbsp; P U J A
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             MUSIC PLAYER
+        ================================== -->
+
+        <div class="music-player">
+
+
+            <!-- SONG COVER -->
+
+            <div class="cover-box">
+
+                <img
+                    id="songCover"
+                    src="assets/song1.jpg"
+                    alt="Chhath Song">
+
+            </div>
+
+
+
+            <!-- SONG INFORMATION -->
+
+            <div class="song-details">
+
+
+                <!-- SONG TITLE -->
+
+                <h3 id="songTitle">
+
+                    Chhath Puja Song 1
+
+                </h3>
+
+
+
+                <!-- ARTIST -->
+
+                <p id="songArtist">
+
+                    Chhath Music
+
+                </p>
+
+
+
+                <!-- PROGRESS -->
+
+                <div class="progress-area">
+
+
+                    <!-- CURRENT TIME -->
+
+                    <span id="currentTime">
+
+                        0:00
+
+                    </span>
+
+
+
+                    <!-- PROGRESS BAR -->
+
+                    <input
+                        type="range"
+                        id="progressBar"
+                        min="0"
+                        max="100"
+                        value="0">
+
+
+
+                    <!-- TOTAL TIME -->
+
+                    <span id="duration">
+
+                        0:00
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 MUSIC CONTROLS
+            ================================== -->
+
+            <div class="controls">
+
+
+                <!-- PREVIOUS -->
+
+                <button
+                    id="previousBtn"
+                    class="control-btn">
+
+                    ⏮
+
+                </button>
+
+
+
+                <!-- PLAY / PAUSE -->
+
+                <button
+                    id="playBtn"
+                    class="play-btn">
+
+                    ▶
+
+                </button>
+
+
+
+                <!-- NEXT -->
+
+                <button
+                    id="nextBtn"
+                    class="control-btn">
+
+                    ⏭
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer>
+
+        Made with
+
+        <span>
+            ♥
+        </span>
+
+        by Aditya
+
+    </footer>
+
+
+
+    <!-- =====================================
+         AUDIO PLAYER
+    ====================================== -->
+
+    <audio
+        id="audioPlayer"
+        preload="metadata">
+    </audio>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
