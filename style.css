@@ -2668,4 +2668,170 @@ footer span {
 
     }
 
+    
+
+}
+
+
+/* ================================
+   MOBILE MUSIC PLAYER FIX
+================================ */
+
+@media (max-width: 700px) {
+
+    .music-player {
+        position: fixed !important;
+
+        left: 50% !important;
+        bottom: 52px !important;
+
+        transform: translateX(-50%) !important;
+
+        width: 94% !important;
+        max-width: 430px !important;
+
+        min-height: 82px !important;
+
+        padding: 10px 8px !important;
+
+        display: grid !important;
+
+        grid-template-columns: 52px minmax(80px, 1fr) 112px !important;
+
+        align-items: center !important;
+
+        gap: 8px !important;
+
+        box-sizing: border-box !important;
+
+        z-index: 9999 !important;
+    }
+
+
+    /* COVER */
+
+    .cover-box {
+        width: 52px !important;
+        height: 52px !important;
+
+        flex-shrink: 0 !important;
+    }
+
+    .cover-box img {
+        width: 100% !important;
+        height: 100% !important;
+
+        object-fit: cover !important;
+
+        border-radius: 50% !important;
+    }
+
+
+    /* SONG DETAILS */
+
+    .song-details {
+        min-width: 0 !important;
+        margin: 0 !important;
+    }
+
+    .song-details h3 {
+        font-size: 12px !important;
+
+        white-space: nowrap !important;
+
+        overflow: hidden !important;
+
+        text-overflow: ellipsis !important;
+
+        margin: 0 0 3px !important;
+    }
+
+    .song-details p {
+        font-size: 10px !important;
+
+        margin: 0 0 5px !important;
+    }
+
+
+    /* PROGRESS */
+
+    .progress-area {
+        display: flex !important;
+
+        align-items: center !important;
+
+        gap: 4px !important;
+
+        width: 100% !important;
+    }
+
+    .progress-area span {
+        font-size: 9px !important;
+    }
+
+    #progressBar {
+        min-width: 0 !important;
+
+        width: 100% !important;
+
+        height: 4px !important;
+    }
+
+
+    /* CONTROLS */
+
+    .controls {
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        gap: 4px !important;
+
+        margin: 0 !important;
+    }
+
+
+    .control-btn {
+        width: 32px !important;
+        height: 32px !important;
+
+        min-width: 32px !important;
+
+        padding: 0 !important;
+
+        font-size: 12px !important;
+    }
+
+
+    .play-btn {
+        width: 42px !important;
+        height: 42px !important;
+
+        min-width: 42px !important;
+
+        padding: 0 !important;
+
+        font-size: 15px !important;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        position: fixed !important;
+
+        bottom: 8px !important;
+
+        left: 50% !important;
+
+        transform: translateX(-50%) !important;
+
+        z-index: 10000 !important;
+
+        font-size: 11px !important;
+
+        white-space: nowrap !important;
+    }
 }
