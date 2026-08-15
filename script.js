@@ -40,17 +40,17 @@ const songs = [
     },
 
     {
-        title: "Ugi He Dinanath",
+        title: "Darshan Dekhai dihi ",
         artist: "Kalpana Patwari",
         file: "assets/song6.mp3",
         cover: "assets/kalpana.jfif"
     },
 
     {
-        title: "Uthau Suruj Bhaile Bihaan",
-        artist: "Shardha Sinha",
+        title: "chala bhauji hali Hali",
+        artist: "pawan singh",
         file: "assets/song7.mp3",
-        cover: "assets/shardha sinha.jpg"
+        cover: "assets/pawan singh.jfif"
     },
 
     {
@@ -61,10 +61,10 @@ const songs = [
     },
 
     {
-        title: "Pahile Pahil Chhathi Maiya",
-        artist: "shardha sinha",
+        title: "Aadit Manaila ",
+        artist: "Anuradha Paudwal",
         file: "assets/song9.mp3",
-        cover: "assets/shardha sinha.jpg"
+        cover: "assets/anuradha.jfif"
     },
 
     {
@@ -82,16 +82,96 @@ const songs = [
     },
 
     {
-        title: "poojan ke beriya nu hoo",
+        title: "Dihi Darshan suraj Gosiyia",
         artist: "Pawan Singh",
+        file: "assets/song12.mp3",
+        cover: "assets/pawan singh.jfif"
+    },
+
+    {
+        title: "Ghatwa Par aajan baajan",
+        artist: "Pawan singh",
         file: "assets/song13.mp3",
         cover: "assets/pawan singh.jfif"
     },
-     {
-        title: "uga hai suraj dev ",
+
+    {
+        title: "Beriya Ke Beri",
         artist: "Anuradha Paudwal",
-        file: "assets/song12.mp3",
+        file: "assets/song14.mp3",
         cover: "assets/anuradha.jfif"
+    },
+
+    {
+        title: "Bhorewe Me Nadiya Nahaila",
+        artist: "Anuradha Paudwal",
+        file: "assets/song15.mp3",
+        cover: "assets/anuradha.jfif"
+    },
+
+    {
+        title: "Chhathi Mai Ke Pawan",
+        artist: "Pawan Singh",
+        file: "assets/song16.mp3",
+        cover: "assets/pawan singh.jfif"
+    },
+
+    {
+        title: "Darshan Dihi Na Apar He Chhathi Maiya",
+        artist: "Anuradha Paudwal",
+        file: "assets/song17.mp3",
+        cover: "assets/anuradha.jfif"
+    },
+
+    {
+        title: "Chhathi Mai Hoihen Sahai",
+        artist: "Pawan Singh",
+        file: "assets/song18.mp3",
+        cover: "assets/pawan singh.jfif"
+    },
+
+    {
+        title: "Ho Deenanath",
+        artist: "Shardha Sinha",
+        file: "assets/song19.mp3",
+        cover: "assets/shardha sinha.jpg"
+    },
+
+    {
+        title: "Jai Chhathi Maiya",
+        artist: "Sonu Nigam, Pawan Singh",
+        file: "assets/song20.mp3",
+        cover: "assets/pawan singh.jfif"
+    },
+
+    {
+        title: "Kopi Kopi Boleli",
+        artist: "Devi",
+        file: "assets/song21.mp3",
+        cover: "assets/anuradha.jfif"
+    },
+
+    {
+        title: "Aadit Manaila Bhojpuri",
+        artist: "Shardha Sinha",
+        file: "assets/song22.mp3",
+        cover: "assets/shardha sinha.jpg"
+    },
+
+    
+
+    {
+        title: "Aragh ke Ber",
+        artist: "Anuradha Paudwal",
+        file: "assets/song24.mp3",
+        cover: "assets/anuradha.jfif"
+    },
+
+    {
+        title: "Pawan Singh Pujan Ke Beriya",
+        artist: "Pawan Singh",
+        file: "assets/song25.mp3",
+        cover: "assets/pawan singh.jfif"
     }
 
 ];

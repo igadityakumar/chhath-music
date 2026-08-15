@@ -255,7 +255,523 @@ body {
 
 }
 
+/* =========================================================
+   🔥 MUMMY KI AGARBATTI - FINAL LIVE SMOKE
+========================================================= */
 
+/* Smoke ko background layer ke upar lao */
+.live-background {
+    z-index: 6;
+}
+
+
+/* Smoke container */
+.incense-smoke {
+    position: fixed;
+
+    /* AGARBATTI KA TIP */
+    left: 64%;
+    top: 31%;
+
+    width: 100px;
+    height: 250px;
+
+    pointer-events: none;
+
+    z-index: 9999;
+}
+
+
+/* =========================================================
+   SMOKE PARTICLES
+========================================================= */
+
+.incense-smoke span {
+    position: absolute;
+
+    /* IMPORTANT:
+       ab bottom nahi,
+       directly tip se start hoga */
+    top: 0;
+
+    left: 42px;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.55) 0%,
+            rgba(245,245,245,0.38) 25%,
+            rgba(230,230,230,0.20) 50%,
+            rgba(220,220,220,0.08) 70%,
+            transparent 80%
+        );
+
+    filter: blur(8px);
+
+    opacity: 0;
+
+    animation:
+        mummyIncenseSmoke
+        5.5s
+        ease-out
+        infinite;
+}
+
+
+/* Smoke ke alag points */
+
+.incense-smoke span:nth-child(1) {
+    left: 40px;
+    animation-delay: 0s;
+}
+
+.incense-smoke span:nth-child(2) {
+    left: 48px;
+    animation-delay: 0.9s;
+}
+
+.incense-smoke span:nth-child(3) {
+    left: 34px;
+    animation-delay: 1.8s;
+}
+
+.incense-smoke span:nth-child(4) {
+    left: 53px;
+    animation-delay: 2.7s;
+}
+
+.incense-smoke span:nth-child(5) {
+    left: 43px;
+    animation-delay: 3.6s;
+}
+
+.incense-smoke span:nth-child(6) {
+    left: 50px;
+    animation-delay: 4.5s;
+}
+
+
+/* =========================================================
+   🌫️ SMOKE ANIMATION
+========================================================= */
+
+@keyframes mummyIncenseSmoke {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(0, 0)
+            scale(0.25);
+    }
+
+    8% {
+        opacity: 0.55;
+    }
+
+    20% {
+        opacity: 0.48;
+
+        transform:
+            translate(-7px, -30px)
+            scale(0.6);
+    }
+
+    35% {
+        opacity: 0.38;
+
+        transform:
+            translate(10px, -65px)
+            scale(0.9);
+    }
+
+    50% {
+        opacity: 0.28;
+
+        transform:
+            translate(-12px, -105px)
+            scale(1.2);
+    }
+
+    65% {
+        opacity: 0.20;
+
+        transform:
+            translate(14px, -145px)
+            scale(1.5);
+    }
+
+    80% {
+        opacity: 0.10;
+
+        transform:
+            translate(-10px, -190px)
+            scale(1.8);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(15px, -235px)
+            scale(2.2);
+    }
+}
+
+
+
+
+
+/* =====================================================
+   🪔 3 LIVE DIYA FLAMES - TOKRI
+===================================================== */
+
+.live-diya-flames {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 9998;
+}
+
+
+/* =========================================
+   🔥 FLAME
+========================================= */
+
+.live-diya-flames span {
+    position: absolute;
+
+    width: 8px;
+    height: 18px;
+
+    border-radius: 55% 55% 45% 45%;
+
+    background:
+        radial-gradient(
+            ellipse at center bottom,
+            #fffbd0 0%,
+            #fff27a 25%,
+            #ffc400 55%,
+            #ff8c00 75%,
+            transparent 100%
+        );
+
+    filter: blur(0.4px);
+
+    transform-origin: center bottom;
+
+    box-shadow:
+        0 0 6px rgba(255, 190, 30, 0.9),
+        0 0 12px rgba(255, 150, 0, 0.55);
+
+    animation: realDiyaFlame 0.75s infinite alternate ease-in-out;
+}
+
+
+/* =====================================================
+   🪔 LEFT DIYA
+===================================================== */
+
+.flame-1 {
+    left: 75%;
+    top: 59%;
+    animation-delay: 0s;
+}
+
+
+/* =====================================================
+   🪔 CENTER DIYA
+===================================================== */
+
+.flame-2 {
+    left: 72%;
+    top: 59.48%;
+    animation-delay: 0.22s;
+}
+
+/* =====================================================
+   🪔 RIGHT DIYA
+===================================================== */
+
+.flame-3 {
+    left: 67.39%;
+    top: 60%;
+    animation-delay: 0.42s;
+}
+
+/* =====================================================
+   🔥 NATURAL FLAME MOVEMENT
+===================================================== */
+
+@keyframes realDiyaFlame {
+
+    0% {
+        transform:
+            translateX(-1px)
+            scaleX(0.85)
+            scaleY(0.90)
+            rotate(-4deg);
+
+        opacity: 0.75;
+    }
+
+    35% {
+        transform:
+            translateX(1px)
+            scaleX(1.05)
+            scaleY(1.10)
+            rotate(3deg);
+
+        opacity: 1;
+    }
+
+    70% {
+        transform:
+            translateX(-1px)
+            scaleX(0.90)
+            scaleY(1.02)
+            rotate(-2deg);
+
+        opacity: 0.85;
+    }
+
+    100% {
+        transform:
+            translateX(2px)
+            scaleX(1.08)
+            scaleY(0.94)
+            rotate(5deg);
+
+        opacity: 0.95;
+    }
+}
+
+
+/* =====================================================
+   ✨ HALKA LIGHT GLOW
+===================================================== */
+
+.live-diya-flames span::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 28px;
+    height: 28px;
+
+    transform: translate(-50%, -35%);
+
+    border-radius: 50%;
+
+    background: rgba(255, 170, 20, 0.22);
+
+    filter: blur(9px);
+
+    z-index: -1;
+}
+
+
+/* =====================================================
+   📱 MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .flame-1 {
+        left: 60%;
+        top: 70%;
+    }
+
+    .flame-2 {
+        left: 67%;
+        top: 69.5%;
+    }
+
+    .flame-3 {
+        left: 73%;
+        top: 72%;
+    }
+
+    .live-diya-flames span {
+        width: 6px;
+        height: 14px;
+    }
+}
+
+
+/* =========================================
+   🌫️ DENSE AGARBATTI SMOKE
+========================================= */
+
+.incense-smoke span {
+    position: absolute;
+
+    top: 0;
+
+    left: 42px;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.75) 0%,
+            rgba(245,245,245,0.55) 25%,
+            rgba(235,235,235,0.35) 45%,
+            rgba(220,220,220,0.15) 65%,
+            transparent 82%
+        );
+
+    filter: blur(10px);
+
+    opacity: 0;
+
+    animation:
+        denseIncenseSmoke
+        5s
+        ease-out
+        infinite;
+}
+
+
+/* Different smoke streams */
+
+.incense-smoke span:nth-child(1) {
+    left: 40px;
+    animation-delay: 0s;
+}
+
+.incense-smoke span:nth-child(2) {
+    left: 48px;
+    animation-delay: 0.5s;
+}
+
+.incense-smoke span:nth-child(3) {
+    left: 34px;
+    animation-delay: 1s;
+}
+
+.incense-smoke span:nth-child(4) {
+    left: 53px;
+    animation-delay: 1.5s;
+}
+
+.incense-smoke span:nth-child(5) {
+    left: 42px;
+    animation-delay: 2s;
+}
+
+.incense-smoke span:nth-child(6) {
+    left: 50px;
+    animation-delay: 2.5s;
+}
+
+
+/* =========================================
+   🌫️ DENSE SMOKE ANIMATION
+========================================= */
+
+@keyframes denseIncenseSmoke {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(0, 0)
+            scale(0.25);
+    }
+
+    8% {
+        opacity: 0.70;
+    }
+
+    20% {
+        opacity: 0.62;
+
+        transform:
+            translate(-10px, -30px)
+            scale(0.75);
+    }
+
+    35% {
+        opacity: 0.50;
+
+        transform:
+            translate(13px, -65px)
+            scale(1.05);
+    }
+
+    50% {
+        opacity: 0.38;
+
+        transform:
+            translate(-15px, -105px)
+            scale(1.4);
+    }
+
+    65% {
+        opacity: 0.27;
+
+        transform:
+            translate(18px, -145px)
+            scale(1.75);
+    }
+
+    80% {
+        opacity: 0.15;
+
+        transform:
+            translate(-12px, -190px)
+            scale(2.1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(15px, -240px)
+            scale(2.5);
+    }
+}
+
+
+/* =========================================================
+   📱 MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .incense-smoke {
+        left: 63%;
+        top: 29%;
+
+        width: 80px;
+        height: 200px;
+    }
+
+    .incense-smoke span {
+        width: 18px;
+        height: 18px;
+    }
+
+}
 /* =====================================================
    REAL BLACK BIRDS
 ===================================================== */
@@ -1639,7 +2155,7 @@ body {
 
     position: absolute;
 
-    top: 36%;
+    top: 29%;
 
     text-align: center;
 
