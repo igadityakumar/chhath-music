@@ -725,3 +725,67 @@ setInterval(
 // =====================================
 
 loadSong(0);
+
+/* =====================================================
+   ADITYA SUPPORT POPUP
+===================================================== */
+
+const supportBtn = document.getElementById("supportBtn");
+const supportPopup = document.getElementById("supportPopup");
+const supportClose = document.getElementById("supportClose");
+
+
+/* OPEN */
+
+if (supportBtn) {
+
+    supportBtn.addEventListener("click", function () {
+
+        supportPopup.classList.add("show");
+
+    });
+
+}
+
+
+/* CLOSE BUTTON */
+
+if (supportClose) {
+
+    supportClose.addEventListener("click", function () {
+
+        supportPopup.classList.remove("show");
+
+    });
+
+}
+
+
+/* CLICK OUTSIDE */
+
+if (supportPopup) {
+
+    supportPopup.addEventListener("click", function (event) {
+
+        if (event.target === supportPopup) {
+
+            supportPopup.classList.remove("show");
+
+        }
+
+    });
+
+}
+
+
+/* ESC KEY */
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape" && supportPopup) {
+
+        supportPopup.classList.remove("show");
+
+    }
+
+});

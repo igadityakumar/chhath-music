@@ -2476,250 +2476,728 @@ footer span {
 
 }
 
-
 /* =========================================================
-   21. MOBILE RESPONSIVE
+   FINAL MOBILE MUSIC PLAYER - CLEAN FIX
 ========================================================= */
 
-@media (max-width: 700px) {
+@media screen and (max-width: 700px) {
 
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden !important;
+    }
 
-    /* Top */
+    body {
+        padding-bottom: 0 !important;
+    }
+
+    .main-section {
+        width: 100% !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        position: relative !important;
+    }
 
     .top-bar {
-
-        top: 17px;
-
-        left: 15px;
-
-        right: 15px;
-
+        top: 18px !important;
+        left: 18px !important;
+        right: 18px !important;
+        z-index: 100 !important;
     }
-
 
     .left-info {
-
-        font-size: 12px;
-
-        gap: 6px;
-
+        font-size: 11px !important;
+        gap: 6px !important;
     }
 
+    .online-dot {
+        width: 7px !important;
+        height: 7px !important;
+    }
 
     .support-btn {
-
-        padding:
-            8px 12px;
-
-        font-size: 12px;
-
+        padding: 7px 12px !important;
+        font-size: 11px !important;
     }
-
-
-    /* Title */
 
     .website-title {
-
-        top: 34%;
-
+        top: 29% !important;
+        width: 100% !important;
+        padding: 0 15px !important;
+        box-sizing: border-box !important;
     }
-
 
     .website-title h1 {
-
-        font-size: 43px;
-
+        font-size: clamp(38px, 11vw, 52px) !important;
+        line-height: 1.1 !important;
     }
-
 
     .website-title p {
-
-        font-size: 10px;
-
-        letter-spacing: 5px;
-
+        margin-top: 7px !important;
+        font-size: 9px !important;
+        letter-spacing: 6px !important;
     }
 
-
-    /* Player */
-
-    .music-player {
-
-        width: 94%;
-
-        min-height: 90px;
-
-        bottom: 55px;
-
-        padding:
-            10px 12px;
-
-        border-radius: 30px;
-
-        gap: 10px;
-
-    }
-
-
-    /* Cover */
-
-    .cover-box img {
-
-        width: 55px;
-
-        height: 55px;
-
-    }
-
-
-    /* Song */
-
-    .song-details h3 {
-
-        font-size: 14px;
-
-    }
-
-
-    .song-details p {
-
-        font-size: 11px;
-
-    }
-
-
-    /* Hide previous and next */
-
-    .control-btn {
-
-        display: none;
-
-    }
-
-
-    /* Play */
-
-    .play-btn {
-
-        width: 46px;
-
-        height: 46px;
-
-        font-size: 16px;
-
-    }
-
-
-    /* Footer */
-
-    footer {
-
-        font-size: 11px;
-
-        bottom: 18px;
-
-    }
-
-}
-
-
-/* =========================================================
-   22. VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 400px) {
-
-
-    .website-title h1 {
-
-        font-size: 36px;
-
-    }
-
-
-    .website-title p {
-
-        letter-spacing: 3px;
-
-    }
-
-
-    .music-player {
-
-        width: 96%;
-
-    }
-
-
-    .cover-box img {
-
-        width: 48px;
-
-        height: 48px;
-
-    }
-
-
-    .play-btn {
-
-        width: 42px;
-
-        height: 42px;
-
-    }
-
-    
-
-}
-
-
-/* ================================
-   MOBILE MUSIC PLAYER FIX
-================================ */
-
-@media (max-width: 700px) {
+    /* =====================================================
+       MOBILE MUSIC PLAYER
+       COVER | SONG + PROGRESS | PLAY
+    ===================================================== */
 
     .music-player {
         position: fixed !important;
-
-        left: 50% !important;
+        left: 10px !important;
+        right: 10px !important;
         bottom: 52px !important;
 
-        transform: translateX(-50%) !important;
+        width: auto !important;
+        max-width: none !important;
 
-        width: 94% !important;
-        max-width: 430px !important;
+        height: 76px !important;
+        min-height: 76px !important;
 
-        min-height: 82px !important;
-
-        padding: 10px 8px !important;
+        margin: 0 !important;
+        padding: 8px 10px !important;
 
         display: grid !important;
-
-        grid-template-columns: 52px minmax(80px, 1fr) 112px !important;
-
+        grid-template-columns: 52px minmax(0, 1fr) 46px !important;
+        column-gap: 9px !important;
         align-items: center !important;
 
-        gap: 8px !important;
-
         box-sizing: border-box !important;
-
-        z-index: 9999 !important;
+        transform: none !important;
+        z-index: 99999 !important;
+        border-radius: 22px !important;
     }
-
-
-    /* COVER */
 
     .cover-box {
         width: 52px !important;
         height: 52px !important;
-
+        min-width: 52px !important;
+        max-width: 52px !important;
+        margin: 0 !important;
+        padding: 0 !important;
         flex-shrink: 0 !important;
     }
 
     .cover-box img {
+        display: block !important;
+        width: 52px !important;
+        height: 52px !important;
+        min-width: 52px !important;
+        min-height: 52px !important;
+        object-fit: cover !important;
+        border-radius: 50% !important;
+    }
+
+    .song-details {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .song-details h3 {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 0 2px 0 !important;
+        padding: 0 !important;
+        font-size: 12px !important;
+        line-height: 15px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    .song-details p {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 0 4px 0 !important;
+        padding: 0 !important;
+        font-size: 9px !important;
+        line-height: 12px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    .progress-area {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        font-size: 8px !important;
+    }
+
+    .progress-area span {
+        flex: 0 0 auto !important;
+        font-size: 8px !important;
+        line-height: 10px !important;
+    }
+
+    #progressBar {
+        flex: 1 1 auto !important;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        height: 3px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .controls {
+        width: 46px !important;
+        min-width: 46px !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+    }
+
+    .controls .control-btn {
+        display: none !important;
+    }
+
+    .controls .play-btn {
+        display: flex !important;
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+        min-height: 42px !important;
+        max-width: 42px !important;
+        max-height: 42px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 15px !important;
+        flex-shrink: 0 !important;
+    }
+
+    footer {
+        position: fixed !important;
+        left: 50% !important;
+        bottom: 10px !important;
+        width: auto !important;
+        transform: translateX(-50%) !important;
+        z-index: 100000 !important;
+        font-size: 9px !important;
+        white-space: nowrap !important;
+    }
+}
+
+/* =========================================================
+   FINAL CLEAN MOBILE OVERRIDE (FULL IMAGE + ALIGNED OVERLAYS + PLAYER)
+========================================================= */
+
+@media screen and (max-width: 700px) {
+
+    /* 1. Full Desktop Background Fit On Mobile Screen */
+    body {
+        background-color: #0b0705 !important;
+        background-image: url("./assets/backbone.png") !important;
+        background-size: contain !important;
+        background-position: center 32% !important;
+        background-repeat: no-repeat !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .main-section {
+        width: 100% !important;
+        height: 100vh !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    /* 2. Website Title Position */
+    .website-title {
+        position: absolute !important;
+        top: 18% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        text-align: center !important;
+        width: 100% !important;
+        z-index: 100 !important;
+    }
+
+    /* 3. Incense Smoke Alignment (Agarbatti Stick Tip) */
+    .incense-smoke {
+        position: absolute !important;
+        left: 64% !important;
+        top: 31% !important;
+        width: 80px !important;
+        height: 200px !important;
+        z-index: 99 !important;
+    }
+
+    .incense-smoke span {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    /* 4. Tokri Diya Flames Alignment */
+    .flame-1 {
+        position: absolute !important;
+        left: 75% !important;
+        top: 59% !important;
+    }
+
+    .flame-2 {
+        position: absolute !important;
+        left: 72% !important;
+        top: 59.5% !important;
+    }
+
+    .flame-3 {
+        position: absolute !important;
+        left: 67.4% !important;
+        top: 60% !important;
+    }
+
+    .live-diya-flames span {
+        width: 6px !important;
+        height: 14px !important;
+    }
+
+    /* 5. Compact Grid Mobile Music Player */
+    .music-player {
+        position: fixed !important;
+        left: 50% !important;
+        right: auto !important;
+        bottom: 45px !important;
+        width: 94% !important;
+        max-width: 430px !important;
+        height: 82px !important;
+        min-height: 82px !important;
+        transform: translateX(-50%) !important;
+        padding: 10px !important;
+        margin: 0 !important;
+        display: grid !important;
+        grid-template-columns: 52px minmax(0, 1fr) 48px !important;
+        gap: 10px !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+        z-index: 999999 !important;
+    }
+
+    /* Cover Box */
+    .music-player .cover-box {
+        width: 52px !important;
+        height: 52px !important;
+        min-width: 52px !important;
+        max-width: 52px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .music-player .cover-box img {
+        display: block !important;
+        width: 52px !important;
+        height: 52px !important;
+        min-width: 52px !important;
+        min-height: 52px !important;
+        object-fit: cover !important;
+        border-radius: 50% !important;
+    }
+
+    /* Song Details */
+    .music-player .song-details {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .music-player .song-details h3 {
+        width: 100% !important;
+        margin: 0 0 3px 0 !important;
+        padding: 0 !important;
+        font-size: 12px !important;
+        line-height: 15px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    .music-player .song-details p {
+        width: 100% !important;
+        margin: 0 0 5px 0 !important;
+        padding: 0 !important;
+        font-size: 9px !important;
+        line-height: 12px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    /* Progress Area */
+    .music-player .progress-area {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+    }
+
+    .music-player .progress-area span {
+        flex-shrink: 0 !important;
+        font-size: 8px !important;
+    }
+
+    .music-player #progressBar {
+        flex: 1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 3px !important;
+    }
+
+    /* Controls */
+    .music-player .controls {
+        width: 48px !important;
+        min-width: 48px !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .music-player .controls .control-btn {
+        display: none !important;
+    }
+
+    .music-player .controls .play-btn {
+        display: flex !important;
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 16px !important;
+    }
+
+    /* Footer */
+    footer {
+        position: fixed !important;
+        left: 50% !important;
+        bottom: 10px !important;
+        width: auto !important;
+        transform: translateX(-50%) !important;
+        z-index: 1000000 !important;
+        font-size: 9px !important;
+        white-space: nowrap !important;
+    }
+}
+
+/* =========================================================
+   FINAL DEVICE-SPECIFIC BACKGROUND FIX
+   Desktop  -> assets/backbone.png
+   Mobile   -> assets/backbone-mobile.png
+   ========================================================= */
+
+/* DESKTOP / LAPTOP */
+@media screen and (min-width: 701px) {
+    html,
+    body {
         width: 100% !important;
         height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    body {
+        background-image: url("./assets/backbone.png") !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: fixed !important;
+    }
+
+    .live-background {
+        background: transparent !important;
+        background-image: none !important;
+    }
+}
+
+/* MOBILE / PHONE */
+@media screen and (max-width: 700px) {
+    html,
+    body {
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+
+    body {
+        background-image: url("./assets/backbone2.png") !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: scroll !important;
+        background-color: #000 !important;
+    }
+
+    .main-section,
+    .canvas-wrapper {
+        background: transparent !important;
+        background-image: none !important;
+    }
+
+    .live-background {
+        background: transparent !important;
+        background-image: none !important;
+    }
+
+    /* Keep the cinematic overlay, but do not replace the image. */
+    .overlay {
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.12),
+            rgba(0, 0, 0, 0.30)
+        ) !important;
+    }
+}
+
+/* =========================================
+   HIDE LIVE DIYA ONLY ON MOBILE
+========================================= */
+
+@media screen and (max-width: 700px) {
+    .live-diya-flames {
+        display: none !important;
+    }
+}
+
+/* =========================================================
+   FINAL DESKTOP DESIGN FIX
+   MOBILE PAR ISKA KOI EFFECT NAHI HOGA
+========================================================= */
+
+@media screen and (min-width: 701px) {
+
+    /* =====================================================
+       MAIN DESKTOP SCREEN
+    ===================================================== */
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .main-section {
+        position: relative !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        overflow: hidden !important;
+    }
+
+
+    /* =====================================================
+       BACKGROUND IMAGE
+    ===================================================== */
+
+    .canvas-wrapper {
+        position: fixed !important;
+
+        left: 0 !important;
+        top: 0 !important;
+
+        width: 100vw !important;
+        height: 100vh !important;
+
+        overflow: hidden !important;
+
+        background: transparent !important;
+    }
+
+    .live-background {
+        position: absolute !important;
+
+        inset: 0 !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        /*
+           FULL IMAGE SHOW KARNE KE LIYE
+           desktop par image crop nahi hogi
+        */
+        background-size: 100% 100% !important;
+
+        background-position: center center !important;
+
+        background-repeat: no-repeat !important;
+
+        z-index: 0 !important;
+    }
+
+
+    /* =====================================================
+       DARK OVERLAY
+    ===================================================== */
+
+    .overlay {
+        position: fixed !important;
+
+        inset: 0 !important;
+
+        width: 100vw !important;
+        height: 100vh !important;
+
+        z-index: 2 !important;
+
+        pointer-events: none !important;
+    }
+
+
+    /* =====================================================
+       WEBSITE TITLE
+       MUMMY KE FACE SE HATA KAR WATER AREA MEIN
+    ===================================================== */
+
+    .website-title {
+        position: absolute !important;
+
+        /*
+           Left side se thoda center
+        */
+        left: 42% !important;
+
+        top: 36% !important;
+
+        transform: translate(-50%, -50%) !important;
+
+        width: auto !important;
+
+        text-align: center !important;
+
+        z-index: 20 !important;
+
+        pointer-events: none !important;
+    }
+
+    .website-title h1 {
+        margin: 0 !important;
+
+        font-size: clamp(42px, 4vw, 78px) !important;
+
+        line-height: 1.1 !important;
+
+        white-space: nowrap !important;
+    }
+
+    .website-title p {
+        margin-top: 12px !important;
+
+        font-size: clamp(12px, 1vw, 18px) !important;
+
+        letter-spacing: 10px !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* =====================================================
+       TOP BAR
+    ===================================================== */
+
+    .top-bar {
+        position: fixed !important;
+
+        top: 0 !important;
+        left: 0 !important;
+
+        width: 100% !important;
+
+        z-index: 100 !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================================
+       DESKTOP MUSIC PLAYER
+    ===================================================== */
+
+    .music-player {
+        position: fixed !important;
+
+        left: 28px !important;
+
+        bottom: 60px !important;
+
+        width: 560px !important;
+
+        max-width: 560px !important;
+
+        min-height: 120px !important;
+
+        padding: 14px 18px !important;
+
+        margin: 0 !important;
+
+        box-sizing: border-box !important;
+
+        display: grid !important;
+
+        grid-template-columns: 72px minmax(0, 1fr) 145px !important;
+
+        align-items: center !important;
+
+        gap: 14px !important;
+
+        z-index: 9999 !important;
+
+        border-radius: 32px !important;
+    }
+
+
+    /* =====================================================
+       DESKTOP COVER
+    ===================================================== */
+
+    .cover-box {
+        width: 72px !important;
+        height: 72px !important;
+
+        min-width: 72px !important;
+        max-width: 72px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .cover-box img {
+        width: 72px !important;
+        height: 72px !important;
+
+        display: block !important;
 
         object-fit: cover !important;
 
@@ -2727,85 +3205,107 @@ footer span {
     }
 
 
-    /* SONG DETAILS */
+    /* =====================================================
+       SONG DETAILS
+    ===================================================== */
 
     .song-details {
+        width: 100% !important;
+
         min-width: 0 !important;
+
         margin: 0 !important;
+        padding: 0 !important;
     }
 
     .song-details h3 {
-        font-size: 12px !important;
+        width: 100% !important;
+
+        margin: 0 0 5px 0 !important;
+
+        font-size: 16px !important;
+
+        line-height: 20px !important;
 
         white-space: nowrap !important;
 
         overflow: hidden !important;
 
         text-overflow: ellipsis !important;
-
-        margin: 0 0 3px !important;
     }
 
     .song-details p {
-        font-size: 10px !important;
+        margin: 0 0 8px 0 !important;
 
-        margin: 0 0 5px !important;
+        font-size: 13px !important;
+
+        line-height: 16px !important;
+
+        white-space: nowrap !important;
+
+        overflow: hidden !important;
+
+        text-overflow: ellipsis !important;
     }
 
 
-    /* PROGRESS */
+    /* =====================================================
+       PROGRESS BAR
+    ===================================================== */
 
     .progress-area {
+        width: 100% !important;
+
         display: flex !important;
 
         align-items: center !important;
 
-        gap: 4px !important;
+        gap: 6px !important;
 
-        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .progress-area span {
-        font-size: 9px !important;
+        font-size: 11px !important;
+
+        flex-shrink: 0 !important;
     }
 
     #progressBar {
-        min-width: 0 !important;
-
         width: 100% !important;
 
-        height: 4px !important;
+        min-width: 0 !important;
+
+        height: 5px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
 
-    /* CONTROLS */
+    /* =====================================================
+       DESKTOP CONTROLS
+    ===================================================== */
 
     .controls {
+        width: 145px !important;
+
+        height: 100% !important;
+
         display: flex !important;
 
         align-items: center !important;
 
         justify-content: center !important;
 
-        gap: 4px !important;
+        gap: 12px !important;
 
         margin: 0 !important;
+        padding: 0 !important;
     }
-
 
     .control-btn {
-        width: 32px !important;
-        height: 32px !important;
-
-        min-width: 32px !important;
-
-        padding: 0 !important;
-
-        font-size: 12px !important;
-    }
-
-
-    .play-btn {
         width: 42px !important;
         height: 42px !important;
 
@@ -2813,25 +3313,753 @@ footer span {
 
         padding: 0 !important;
 
-        font-size: 15px !important;
+        font-size: 14px !important;
+    }
+
+    .play-btn {
+        width: 54px !important;
+        height: 54px !important;
+
+        min-width: 54px !important;
+        min-height: 54px !important;
+
+        padding: 0 !important;
+
+        font-size: 20px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
     }
 
 
-    /* FOOTER */
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     footer {
         position: fixed !important;
 
-        bottom: 8px !important;
-
         left: 50% !important;
+
+        bottom: 18px !important;
 
         transform: translateX(-50%) !important;
 
         z-index: 10000 !important;
 
-        font-size: 11px !important;
+        font-size: 13px !important;
 
         white-space: nowrap !important;
+    }
+
+
+    /* =====================================================
+       DESKTOP LIVE EFFECTS
+       DESKTOP PAR DIYA RAHEGA
+    ===================================================== */
+
+    .live-diya-flames {
+        display: block !important;
+    }
+
+}
+
+/* =========================================
+   MOBILE PLAYER - SHOW PREVIOUS / NEXT
+========================================= */
+
+@media screen and (max-width: 700px) {
+
+    .music-player {
+        grid-template-columns: 52px minmax(0, 1fr) 120px !important;
+        gap: 8px !important;
+    }
+
+    .controls {
+        width: 120px !important;
+        height: 100% !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 5px !important;
+    }
+
+    /* PREVIOUS + NEXT */
+    .controls .control-btn {
+        display: flex !important;
+
+        width: 30px !important;
+        height: 30px !important;
+
+        min-width: 30px !important;
+        min-height: 30px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        font-size: 11px !important;
+    }
+
+    /* PLAY */
+    .controls .play-btn {
+        display: flex !important;
+
+        width: 40px !important;
+        height: 40px !important;
+
+        min-width: 40px !important;
+        min-height: 40px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        font-size: 15px !important;
+    }
+
+}
+
+/* =====================================================
+   FINAL MOBILE MUSIC CONTROLS FIX
+   PREVIOUS + PLAY + NEXT
+===================================================== */
+
+@media screen and (max-width: 700px) {
+
+    /* MUSIC PLAYER */
+    .music-player {
+        width: calc(100% - 20px) !important;
+        max-width: 430px !important;
+
+        display: grid !important;
+        grid-template-columns: 52px minmax(0, 1fr) 118px !important;
+
+        gap: 8px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =================================================
+       CONTROLS AREA
+    ================================================= */
+
+    .music-player .controls {
+        width: 118px !important;
+        min-width: 118px !important;
+        max-width: 118px !important;
+
+        height: 100% !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 5px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+
+    /* =================================================
+       PREVIOUS BUTTON
+    ================================================= */
+
+    .music-player #previousBtn {
+        display: flex !important;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        position: relative !important;
+
+        width: 30px !important;
+        height: 30px !important;
+
+        min-width: 30px !important;
+        min-height: 30px !important;
+
+        max-width: 30px !important;
+        max-height: 30px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        font-size: 11px !important;
+
+        flex-shrink: 0 !important;
+    }
+
+
+    /* =================================================
+       PLAY BUTTON
+    ================================================= */
+
+    .music-player #playBtn {
+        display: flex !important;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        position: relative !important;
+
+        width: 42px !important;
+        height: 42px !important;
+
+        min-width: 42px !important;
+        min-height: 42px !important;
+
+        max-width: 42px !important;
+        max-height: 42px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        font-size: 15px !important;
+
+        flex-shrink: 0 !important;
+    }
+
+
+    /* =================================================
+       NEXT BUTTON
+    ================================================= */
+
+    .music-player #nextBtn {
+        display: flex !important;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        position: relative !important;
+
+        width: 30px !important;
+        height: 30px !important;
+
+        min-width: 30px !important;
+        min-height: 30px !important;
+
+        max-width: 30px !important;
+        max-height: 30px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        font-size: 11px !important;
+
+        flex-shrink: 0 !important;
+    }
+
+}
+
+/* =====================================================
+   THIN & CLEAN MUSIC PLAYER
+===================================================== */
+
+.music-player {
+    height: 92px !important;
+    min-height: 92px !important;
+
+    padding: 10px 18px !important;
+
+    border-radius: 28px !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* COVER */
+
+.music-player .cover-box {
+    width: 58px !important;
+    height: 58px !important;
+}
+
+.music-player .cover-box img {
+    width: 58px !important;
+    height: 58px !important;
+}
+
+
+/* SONG NAME */
+
+.music-player .song-details h3 {
+    font-size: 15px !important;
+    margin-bottom: 3px !important;
+}
+
+.music-player .song-details p {
+    font-size: 12px !important;
+    margin-bottom: 5px !important;
+}
+
+
+/* PROGRESS */
+
+.music-player .progress-area {
+    height: 14px !important;
+}
+
+.music-player #progressBar {
+    height: 4px !important;
+}
+
+
+/* CONTROLS */
+
+.music-player .controls {
+    gap: 8px !important;
+}
+
+.music-player .control-btn {
+    width: 36px !important;
+    height: 36px !important;
+
+    min-width: 36px !important;
+    min-height: 36px !important;
+
+    border-radius: 50% !important;
+}
+
+.music-player .play-btn {
+    width: 46px !important;
+    height: 46px !important;
+
+    min-width: 46px !important;
+    min-height: 46px !important;
+
+    border-radius: 50% !important;
+}
+
+/* =====================================================
+   MOBILE MUSIC PLAYER - THINNER
+===================================================== */
+
+@media screen and (max-width: 700px) {
+
+    .music-player {
+        height: 82px !important;
+        min-height: 82px !important;
+
+        padding: 8px 10px !important;
+
+        border-radius: 22px !important;
+
+        grid-template-columns: 50px minmax(0, 1fr) 118px !important;
+
+        gap: 7px !important;
+    }
+
+    .music-player .cover-box {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .music-player .cover-box img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .music-player .song-details h3 {
+        font-size: 12px !important;
+        line-height: 15px !important;
+    }
+
+    .music-player .song-details p {
+        font-size: 10px !important;
+        line-height: 12px !important;
+    }
+
+    .music-player .progress-area {
+        height: 12px !important;
+    }
+
+    .music-player .controls {
+        width: 118px !important;
+        min-width: 118px !important;
+
+        gap: 4px !important;
+    }
+
+    .music-player #previousBtn,
+    .music-player #nextBtn {
+        width: 29px !important;
+        height: 29px !important;
+
+        min-width: 29px !important;
+        min-height: 29px !important;
+
+        font-size: 10px !important;
+    }
+
+    .music-player #playBtn {
+        width: 40px !important;
+        height: 40px !important;
+
+        min-width: 40px !important;
+        min-height: 40px !important;
+
+        font-size: 14px !important;
+    }
+}
+
+/* =====================================================
+   ADITYA SUPPORT POPUP
+===================================================== */
+
+.support-popup {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    backdrop-filter: blur(6px);
+
+    z-index: 9999999;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* SHOW POPUP */
+
+.support-popup.show {
+    display: flex;
+}
+
+
+/* CARD */
+
+.support-card {
+    position: relative;
+
+    width: 360px;
+    max-width: 100%;
+
+    padding: 32px 28px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(70, 35, 20, 0.97),
+            rgba(30, 18, 12, 0.97)
+        );
+
+    border: 1px solid rgba(255, 190, 120, 0.35);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.6);
+
+    color: white;
+
+    animation: supportPopupIn 0.3s ease;
+}
+
+
+/* HEART */
+
+.support-heart {
+    font-size: 42px;
+
+    margin-bottom: 8px;
+
+    animation: heartBeat 1.5s infinite;
+}
+
+
+/* TITLE */
+
+.support-card h2 {
+    margin: 0 0 12px;
+
+    font-size: 24px;
+}
+
+
+/* MAIN TEXT */
+
+.support-main {
+    margin: 0 auto 12px;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.support-main strong {
+    color: #ffd39a;
+}
+
+
+/* SMALL TEXT */
+
+.support-small {
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* SIGNATURE */
+
+.support-sign {
+    margin-top: 18px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #ffd39a;
+}
+
+
+/* CLOSE */
+
+.support-close {
+    position: absolute;
+
+    top: 10px;
+    right: 12px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.support-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+
+    transform: rotate(90deg);
+}
+
+
+/* ANIMATION */
+
+@keyframes supportPopupIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.85) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+
+@keyframes heartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 700px) {
+
+    .support-card {
+        width: 320px;
+
+        padding: 28px 22px;
+
+        border-radius: 22px;
+    }
+
+    .support-heart {
+        font-size: 36px;
+    }
+
+    .support-card h2 {
+        font-size: 21px;
+    }
+
+    .support-main {
+        font-size: 14px;
+    }
+
+}
+
+/* =====================================================
+   FINAL DESKTOP TOP BAR FIX
+   ===================================================== */
+
+@media screen and (min-width: 701px) {
+
+    /* TOP BAR */
+    .top-bar {
+        position: fixed !important;
+
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+
+        width: 100% !important;
+        height: auto !important;
+
+        box-sizing: border-box !important;
+
+        padding: 18px 28px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        z-index: 99999 !important;
+
+        pointer-events: none !important;
+    }
+
+
+    /* TIME + LISTENING */
+    .left-info {
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 8px !important;
+
+        font-size: 16px !important;
+
+        white-space: nowrap !important;
+
+        pointer-events: auto !important;
+    }
+
+
+    /* DIVIDER */
+    .left-info .divider {
+        opacity: 0.7 !important;
+        margin: 0 2px !important;
+    }
+
+
+    /* ONLINE DOT */
+    .online-dot {
+        width: 9px !important;
+        height: 9px !important;
+
+        min-width: 9px !important;
+        min-height: 9px !important;
+
+        display: inline-block !important;
+
+        border-radius: 50% !important;
+    }
+
+
+    /* SUPPORT BUTTON */
+    .support-btn {
+        margin: 0 !important;
+
+        padding: 10px 18px !important;
+
+        min-height: 42px !important;
+
+        border-radius: 22px !important;
+
+        font-size: 15px !important;
+
+        white-space: nowrap !important;
+
+        pointer-events: auto !important;
+    }
+}
+
+
+/* =====================================================
+   DESKTOP MUSIC PLAYER - LITTLE THINNER
+   ===================================================== */
+
+@media screen and (min-width: 701px) {
+
+    .music-player {
+        height: 118px !important;
+        min-height: 118px !important;
+
+        padding: 14px 20px !important;
+
+        box-sizing: border-box !important;
+
+        border-radius: 30px !important;
+    }
+
+    .cover-box {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .cover-box img {
+        width: 70px !important;
+        height: 70px !important;
     }
 }
