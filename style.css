@@ -4063,3 +4063,217 @@ footer span {
         height: 70px !important;
     }
 }
+
+/* =========================================================
+   EXTRA CLEAR TRANSPARENT MUSIC PLAYER
+========================================================= */
+
+.music-player {
+    background: rgba(255, 255, 255, 0.005) !important;
+
+    /* almost NO blur */
+    backdrop-filter: blur(0.3px) !important;
+    -webkit-backdrop-filter: blur(0.3px) !important;
+
+    /* very thin outline */
+    border: 1px solid rgba(255, 255, 255, 0.32) !important;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.06),
+        inset 0 1px 1px rgba(255, 255, 255, 0.08) !important;
+
+    border-radius: 30px !important;
+}
+
+
+/* SONG TITLE */
+.music-player .song-details h3 {
+    color: #fff !important;
+
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+
+/* ARTIST */
+.music-player .song-details p {
+    color: rgba(255, 255, 255, 0.82) !important;
+
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.55) !important;
+}
+
+
+/* TIME */
+.music-player .progress-area span {
+    color: #fff !important;
+
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.60) !important;
+}
+
+
+/* PREVIOUS / NEXT */
+.music-player .control-btn {
+    background: rgba(255, 255, 255, 0.025) !important;
+
+    color: #fff !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.38) !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.08) !important;
+}
+
+
+/* PLAY */
+.music-player .play-btn {
+    background: rgba(255, 255, 255, 0.68) !important;
+
+    color: #111 !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.65) !important;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.10) !important;
+}
+
+
+/* HOVER */
+.music-player .control-btn:hover {
+    background: rgba(255, 255, 255, 0.07) !important;
+}
+
+.music-player .play-btn:hover {
+    background: rgba(255, 255, 255, 0.82) !important;
+}
+
+
+/* PROGRESS */
+.music-player #progressBar {
+    background: transparent !important;
+    accent-color: rgba(255, 255, 255, 0.90) !important;
+}
+
+
+/* COVER */
+.music-player .cover-box img {
+    border: 1px solid rgba(255, 255, 255, 0.40) !important;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.10) !important;
+}
+
+
+/* MOBILE */
+@media screen and (max-width: 700px) {
+
+    .music-player {
+        background: rgba(255, 255, 255, 0.005) !important;
+
+        backdrop-filter: blur(0.3px) !important;
+        -webkit-backdrop-filter: blur(0.3px) !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.30) !important;
+    }
+
+    .music-player .control-btn {
+        background: rgba(255, 255, 255, 0.025) !important;
+    }
+
+    .music-player .play-btn {
+        background: rgba(255, 255, 255, 0.68) !important;
+    }
+}
+
+/* =========================================================
+   MOBILE MUSIC PROGRESS BAR - FIX
+========================================================= */
+
+@media screen and (max-width: 700px) {
+
+    .music-player .progress-area {
+        display: flex !important;
+        align-items: center !important;
+
+        width: 100% !important;
+        height: 18px !important;
+
+        margin: 2px 0 0 0 !important;
+        padding: 0 !important;
+
+        gap: 6px !important;
+    }
+
+    /* TIME TEXT */
+    .music-player .progress-area span {
+        flex-shrink: 0 !important;
+
+        font-size: 10px !important;
+        line-height: 18px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    /* PROGRESS BAR */
+    .music-player #progressBar {
+        flex: 1 !important;
+
+        width: auto !important;
+        min-width: 0 !important;
+
+        height: 4px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        align-self: center !important;
+
+        cursor: pointer !important;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .music-player #progressBar::-webkit-slider-runnable-track {
+        height: 4px !important;
+        border-radius: 10px !important;
+    }
+
+    .music-player #progressBar::-webkit-slider-thumb {
+        width: 16px !important;
+        height: 16px !important;
+
+        margin-top: -6px !important;
+
+        border-radius: 50% !important;
+
+        background: #ffffff !important;
+
+        border: none !important;
+
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    .music-player #progressBar::-moz-range-track {
+        height: 4px !important;
+        border-radius: 10px !important;
+    }
+
+    .music-player #progressBar::-moz-range-thumb {
+        width: 16px !important;
+        height: 16px !important;
+
+        border-radius: 50% !important;
+
+        background: #ffffff !important;
+
+        border: none !important;
+    }
+}
